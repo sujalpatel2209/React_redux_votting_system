@@ -66,33 +66,55 @@ class App extends Component {
                     <div className={'col-lg-2'}>
                         <h2>React</h2>
                         <p>{this.state.react}</p>
-                        <button onClick={this.submitVote.bind(this, 1)}
-                                className={(this.state.react == 0) ? 'btn btn-primary' : 'btn btn-success'}>Vote</button>
+                        {
+                            (this.state.react == 0) ? <button onClick={this.submitVote.bind(this, 1)} 
+                                className={'btn btn-primary'}>Vote</button>
+                                : <button onClick={this.submitVote.bind(this, 1)}
+                                className={'btn btn-success'}>Un Vote</button>
+                        }
                     </div>
                     <div className={'col-lg-2'}>
                         <h2>Vue</h2>
                         <p>{this.state.vue}</p>
-                        <button onClick={this.submitVote.bind(this, 2)} className={(this.state.vue == 0) ? 'btn btn-primary' : 'btn btn-success'}>Vote</button>
+                        {
+                            (this.state.vue == 0) ? <button onClick={this.submitVote.bind(this, 2)} className={'btn btn-primary'}>Vote</button>
+                            : <button onClick={this.submitVote.bind(this, 2)} className={'btn btn-success'}>Un Vote</button>
+                        }
                     </div>
                     <div className={'col-lg-2'}>
                         <h2>Angular</h2>
                         <p>{this.state.angular}</p>
-                        <button onClick={this.submitVote.bind(this, 3)} className={(this.state.angular == 0) ? 'btn btn-primary' : 'btn btn-success'}>Vote</button>
+                        {
+                            (this.state.angular == 0) ? <button onClick={this.submitVote.bind(this, 3)} className={'btn btn-primary'}>Vote</button> 
+                            : <button onClick={this.submitVote.bind(this, 3)} className={'btn btn-success'}>Un Vote</button> 
+                        }
+                        
                     </div>
                     <div className={'col-lg-2'}>
                         <h2>NodeJs</h2>
                         <p>{this.state.nodejs}</p>
-                        <button onClick={this.submitVote.bind(this, 4)} className={(this.state.nodejs == 0) ? 'btn btn-primary' : 'btn btn-success'}>Vote</button>
+                        {
+                            (this.state.nodejs == 0) ? <button onClick={this.submitVote.bind(this, 4)} className={'btn btn-primary'}>Vote</button>
+                            : <button onClick={this.submitVote.bind(this, 4)} className={'btn btn-success'}>Un Vote</button> 
+                        }
+                        
                     </div>
                     <div className={'col-lg-2'}>
                         <h2>Meteor</h2>
                         <p>{this.state.meteor}</p>
-                        <button onClick={this.submitVote.bind(this, 5)} className={(this.state.meteor == 0) ? 'btn btn-primary' : 'btn btn-success'}>Vote</button>
+                        {
+                            (this.state.meteor == 0) ? <button onClick={this.submitVote.bind(this, 5)} className={'btn btn-primary'}>Vote</button> 
+                            : <button onClick={this.submitVote.bind(this, 5)} className={'btn btn-success'}>Un Vote</button>
+                        }
+                        
                     </div>
                     <div className={'col-lg-2'}>
                         <h1>Ember</h1>
                         <p>{this.state.ember}</p>
-                        <button onClick={this.submitVote.bind(this, 6)} className={(this.state.ember == 0) ? 'btn btn-primary' : 'btn btn-success'}>Vote</button>
+                        {
+                            (this.state.ember == 0) ? <button onClick={this.submitVote.bind(this, 6)} className={'btn btn-primary'}>Vote</button>
+                            : <button onClick={this.submitVote.bind(this, 6)} className={'btn btn-success'}>Un Vote</button>
+                        }
                     </div>
                 </div>
             </div>
