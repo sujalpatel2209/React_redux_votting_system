@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class App extends Component {
 
-    constructor(props) {
+constructor(props) {
         super(props);
 
         this.state = {
@@ -22,7 +22,7 @@ class App extends Component {
         switch (jsNumber){
             case 1:
                 this.setState({
-                    react: 1
+                    react: this.state.react+1
                 })
                 break;
             case 2:
