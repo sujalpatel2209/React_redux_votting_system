@@ -1,25 +1,11 @@
 import React, {Component} from 'react';
 import store from '../redux/store'
+import { connect } from 'react-redux'
 
 class App extends Component {
 
-constructor(props) {
-        super(props);
-
-        this.state = {
-            react: 0,
-            vue: 0,
-            angular: 0,
-            nodejs: 0,
-            meteor: 0,
-            ember: 0
-        }
-    }
-
     // Submit favorite JS Vote
-
     submitVote (jsNumber, event) {
-
         store.dispatch({
             type: 'VOTE',
             payload: {
@@ -27,43 +13,11 @@ constructor(props) {
                 vote: 1
             }
         })
-
-        // switch (jsNumber){
-        //     case 1:
-        //         this.setState({
-        //             react: this.state.react+1
-        //         })
-        //         break;
-        //     case 2:
-        //         this.setState({
-        //             vue: 1
-        //         })
-        //         break;
-        //     case 3:
-        //         this.setState({
-        //             angular: 1
-        //         })
-        //         break;
-        //     case 4:
-        //         this.setState({
-        //             nodejs: 1
-        //         })
-        //         break;
-        //     case 5:
-        //         this.setState({
-        //             meteor: 1
-        //         })
-        //         break;
-        //     case 6:
-        //         this.setState({
-        //             ember: 1
-        //         })
-        //         break;
-        // }
     }
 
     render() {
         return (
+            <Provider store={store}>
             <div className={'container'}>
                 <div className={'row, text-center'}>
                     <div className={'col-lg-12'}>
@@ -126,8 +80,13 @@ constructor(props) {
                     </div>
                 </div>
             </div>
+            </Provider>
         );
     }
 }
 
-export default App;
+function mapStateToProps(state){
+    console.log('state', state);
+}
+
+export default connect(mapStateToProps)(App);

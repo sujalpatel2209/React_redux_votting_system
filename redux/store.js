@@ -14,27 +14,22 @@ const reducer = (state = initialState, action) => {
         case "VOTE":
             switch (action.payload.jsNumber){
                 case 1:
-                    console.log('react')
+                    state.react += 1;
                     break;
                 case 2:
-                console.log('vue')
-                   
+                state.vue += 1;
                     break;
                 case 3:
-                console.log('angular')
-                   
+                state.angular += 1;
                     break;
                 case 4:
-                console.log('nodejs')
-                   
+                state.nodejs += 1;
                     break;
                 case 5:
-                console.log('meteor')
-                    
+                state.meteor += 1;
                     break;
                 case 6:
-                console.log('ember')
-                  
+                state.ember += 1;
                     break;
             }
             console.log(action.payload);
